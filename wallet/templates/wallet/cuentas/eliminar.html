@@ -1,0 +1,9 @@
+{% extends 'wallet/base.html' %} {% block content %}
+<h2>Eliminar {{ tipo }}</h2>
+<p>¿Seguro que deseas eliminar: {{ objeto }}?</p>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Sí, eliminar</button>
+</form>
+<a href="{% url 'lista_cuentas' %}">Cancelar</a>
+{% endblock %}

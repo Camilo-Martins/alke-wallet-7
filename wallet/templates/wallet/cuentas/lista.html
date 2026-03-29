@@ -1,0 +1,13 @@
+{% extends 'wallet/base.html' %} {% block content %}
+<h2>Lista de cuentas</h2>
+<a href="{% url 'crear_cuenta' %}">Crear cuenta</a>
+<ul>
+  {% for cuenta in cuentas %}
+  <li>
+    {{ cuenta.numero_cuenta }} - {{ cuenta.usuario.nombre }} - Saldo: {{ cuenta.saldo }}
+    <a href="{% url 'editar_cuenta' cuenta.id %}">Editar</a>
+    <a href="{% url 'eliminar_cuenta' cuenta.id %}">Eliminar</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

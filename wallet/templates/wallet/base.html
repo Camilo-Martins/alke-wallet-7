@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alke Wallet</title>
+  </head>
+  <body>
+    <h1>Alke Wallet</h1>
+    <nav>
+      <a href="{% url 'inicio' %}">Inicio</a> | <a href="{% url 'lista_usuarios' %}">Usuarios</a> |
+      <a href="{% url 'lista_cuentas' %}">Cuentas</a> |
+      <a href="{% url 'lista_transacciones' %}">Transacciones</a>
+    </nav>
+    <hr />
+
+    {% block content %} {% endblock %}
+  </body>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    nav {
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #007bff;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 6px 10px;
+      margin-top: 5px;
+      text-decoration: none;
+      background: #007bff;
+      color: white;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .btn-danger {
+      background: #dc3545;
+    }
+
+    .btn-secondary {
+      background: #6c757d;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: #fafafa;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    form {
+      margin-top: 15px;
+    }
+
+    input,
+    select {
+      padding: 5px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  </style>
+</html>

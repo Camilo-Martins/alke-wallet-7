@@ -1,0 +1,13 @@
+{% extends 'wallet/base.html' %} {% block content %}
+<h2>Lista de transacciones</h2>
+<a href="{% url 'crear_transaccion' %}">Crear transacción</a>
+<ul>
+  {% for transaccion in transacciones %}
+  <li>
+    {{ transaccion.tipo }} - {{ transaccion.monto }} - Cuenta: {{ transaccion.cuenta.numero_cuenta}}
+    <a href="{% url 'editar_transaccion' transaccion.id %}">Editar</a>
+    <a href="{% url 'eliminar_transaccion' transaccion.id %}">Eliminar</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
